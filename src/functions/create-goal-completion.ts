@@ -27,7 +27,7 @@ export async function createGoalCompletion({
           eq(goalCompletions.goalId, goalId)
         )
       )
-      .groupBy(goalCompletions.id)
+      .groupBy(goalCompletions.goalId)
   );
 
   const result = await db

@@ -4,7 +4,7 @@ import { createGoalCompletion } from '../../functions/create-goal-completion';
 
 export const createGoalCompletionRoute: FastifyPluginAsyncZod = async app => {
   app.post(
-    '/goals/completions',
+    '/goals/completion',
     {
       schema: {
         body: z.object({
