@@ -1,18 +1,11 @@
 import fastify from 'fastify';
 import fastifyCors from '@fastify/cors';
-import {
-  serializerCompiler,
-  validatorCompiler,
-  type ZodTypeProvider,
-} from 'fastify-type-provider-zod';
+import { serializerCompiler, validatorCompiler, type ZodTypeProvider } from 'fastify-type-provider-zod';
 
 import { createGoalRoute } from './routes/create-goal';
 import { createGoalCompletionRoute } from './routes/create-completion-goal';
 import { getPendingGoalsRoute } from './routes/get-pending-goals';
 import { getWeekSummaryRoute } from './routes/get-week-summary';
-
-process.env.TZ = 'America/Sao_Paulo';
-console.log(process.env.TZ);
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
