@@ -11,6 +11,9 @@ import { createGoalCompletionRoute } from './routes/create-completion-goal';
 import { getPendingGoalsRoute } from './routes/get-pending-goals';
 import { getWeekSummaryRoute } from './routes/get-week-summary';
 
+process.env.TZ = 'America/Sao_Paulo';
+console.log(process.env.TZ);
+
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.setValidatorCompiler(validatorCompiler);
